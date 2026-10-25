@@ -88,6 +88,17 @@ h1, h2, h3 {
 .strip span { font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em; color: var(--muted); }
 .strip b { color: var(--cream); font-weight: 500; }
 
+/* Promo video: portrait clip beside a short caption */
+.promo { padding-block: 88px 0; display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 56px; align-items: center; }
+.promo .txt { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.promo h2 { font-size: clamp(36px, 5vw, 56px); }
+.promo p { margin: 0; color: var(--muted); max-width: 30rem; }
+.promo video {
+  display: block; width: 100%; height: auto; aspect-ratio: 9 / 16;
+  background: var(--yp); border-radius: 28px; border: 1px solid var(--line);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.45);
+}
+
 /* Games */
 .games { padding-block: 88px 40px; display: flex; flex-direction: column; gap: 28px; }
 .games > header { display: flex; flex-direction: column; gap: 12px; margin-bottom: 12px; }
@@ -126,6 +137,8 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
   .fan { height: 420px; }
   .fan img { width: 220px; }
   .fan .c { width: 240px; }
+  .promo { padding-block: 64px 0; grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .promo video { max-width: 320px; margin: 0 auto; }
   .game { grid-template-columns: minmax(0, 1fr); padding: 28px 24px; gap: 24px; }
   .game img { max-width: 220px; margin: 0 auto; }
   .info .wrap { grid-template-columns: minmax(0, 1fr); gap: 16px; }
@@ -170,6 +183,18 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
     <span>No batteries to swap</span>
   </div>
 </div>
+
+<section class="wrap promo" id="video">
+  <div class="txt">
+    <div class="eyebrow">See it in action</div>
+    <h2>Flip it open, press start</h2>
+    <p>A quick look at all three consoles: unfold the phone and the top screen lights up, just like the real thing. Turn the sound on for the beeps.</p>
+  </div>
+  <video controls playsinline preload="none" poster="images/promo-poster.jpg" width="1080" height="1920" aria-label="Flip &amp; Play promo video">
+    <source src="videos/FlipAndPlay_promo_v4.mp4" type="video/mp4">
+    <a href="videos/FlipAndPlay_promo_v4.mp4">Watch the Flip &amp; Play promo video</a>
+  </video>
+</section>
 
 <section class="wrap games" id="games">
   <header>
